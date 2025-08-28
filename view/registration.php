@@ -16,6 +16,10 @@
         <input type="number" id="Phone"> <br><br>
         <label for="bod">Date of Birth :</label>
         <input type="date" id="bod"> <br><br>
+        <label for="Role">Role: </label>
+        <input type="radio" name="" id="Teacher">Teacher
+        <input type="radio" id="Student">Student
+        <br><br>
         <label for="Password">Password :</label>
         <input type="password" id="Password"> <br><br>
         <label for="CPassword">Confirm Password :</label>
