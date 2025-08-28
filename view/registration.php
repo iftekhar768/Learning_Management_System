@@ -1,19 +1,19 @@
 <?php
-// Database connection
-$servername = "localhost";  // usually localhost
-$username = "root";         // default XAMPP user
-$password = "";             // default XAMPP password is empty
+
+$servername = "localhost";  
+$username = "root";         
+$password = "";             
 $dbname = "user_table";
-         // change if your DB name is different
+         
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Insert into DB when form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_name = $_POST['UserName'];
     $email     = $_POST['Email'];
