@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "user_table";
+$dbname = "learning_management";
 
 header('Content-Type: application/json; charset=utf-8');
 
