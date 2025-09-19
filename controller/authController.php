@@ -1,10 +1,10 @@
 <?php
     require_once("userController.php");
     
-
+    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) 
     {
-        session_start();
+     
 
         $user = [
             "user_id" => $_POST["userId"],
@@ -14,7 +14,7 @@
             "pass"    => $_POST["pass"]
         ];
 
-        require_once("userController.php");
+        
         $result = registeringUser($user);
 
         if ($result) {
@@ -23,6 +23,24 @@
             echo "Error in registration.";
         }
     }
+    if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_POST["login"]))
+    {
+        $user = [
+            "user_id" => $_POST["userId"],
+            "pass"    => $_POST["pass"]
+        ];
+        
+        $result = login($user);
+        if($result)
+        {
+            
+        }
+        else
+        {
+            echo "Login Failed.";
+        }
+    }
+    
 
 
 

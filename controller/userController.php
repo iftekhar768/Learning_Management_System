@@ -5,4 +5,9 @@
     {
         return registerUser($user);
     }
+
+    function login($user) 
+    {
+        return validateAndLogin($user);
+    }
 ?>

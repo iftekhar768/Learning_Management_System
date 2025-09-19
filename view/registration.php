@@ -2,9 +2,10 @@
     require_once("../model/database.php");
     require_once("../controller/authController.php");
     require_once("../controller/userController.php");
-    require_once("../model/userModel.php")
+    require_once("../model/userModel.php");
     
-  
+   
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
