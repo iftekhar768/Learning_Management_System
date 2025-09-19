@@ -18,7 +18,7 @@
         $result = registeringUser($user);
 
         if ($result) {
-            echo "User registered successfully!";
+            header("Location: ../view/login.php");
         } else {
             echo "Error in registration.";
         }
