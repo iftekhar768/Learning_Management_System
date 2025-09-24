@@ -1,5 +1,6 @@
 <?php
     require_once("userController.php");
+    require_once("../model/userModel.php");
     
     session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) 
@@ -41,10 +42,11 @@
         }
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
 
  
-    if (isset($_POST["action"]) && $_POST["action"] === "insert") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["insert"]))
+    {
         $user = [
             "user_id" => $_POST["userId"],
             "name"    => $_POST["username"],
@@ -52,7 +54,14 @@
             "email"   => $_POST["email"],
             "pass"    => $_POST["pass"]
         ];
-        registerUser($user);
+       $result= registeringUser($user);
+       if($result)
+       {
+
+       }
+       else{
+        echo "insertion failed";
+       }
     }
 
     if (isset($_POST["action"]) && $_POST["action"] === "delete") {
@@ -94,7 +103,7 @@
     }
 
     exit; 
-}
+
 
 
 

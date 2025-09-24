@@ -19,8 +19,8 @@ $result = mysqli_query($conn, $sql);
 </head>
 <body>
    
-    <h2>Add New User</h2>
-    <form action="../../controller/userController.php" method="POST">
+    <h2>User Management</h2>
+    <form action="../../controller/authController.php" method="POST">
         <input type="text" name="userId" placeholder="User ID" required>
         <input type="text" name="username" placeholder="Name" required>
         <select name="role" required>
@@ -29,7 +29,7 @@ $result = mysqli_query($conn, $sql);
         </select>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="pass" placeholder="Password" required>
-        <button type="submit" name="insert">Insert</button>
+        <button type="submit" name="insert" value="insert">Insert</button>
     </form>
 
   >

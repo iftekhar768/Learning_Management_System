@@ -18,7 +18,7 @@ function registerUser($user)
                     '{$user["role"]}',
                     '{$user["email"]}',
                     '{$user["pass"]}',
-                    'active')";   // 👈 add default value for status
+                    'active')";   
     
     $result = mysqli_query($conn, $sql);
     if (!$result) {
