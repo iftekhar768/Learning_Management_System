@@ -12,13 +12,12 @@ function validateUser()
 function registerUser($user)
 {
     $conn = getConnection();
-    $sql = "INSERT INTO `user` (user_id, name, role, email, pass, status) 
+    $sql = "INSERT INTO `user` (user_id, name, role, email, pass) 
             VALUES ('{$user["user_id"]}',
                     '{$user["name"]}',
                     '{$user["role"]}',
                     '{$user["email"]}',
-                    '{$user["pass"]}',
-                    'active')";   
+                    '{$user["pass"]}')";
     
     $result = mysqli_query($conn, $sql);
     if (!$result) {
@@ -26,6 +25,7 @@ function registerUser($user)
     }
     return $result;
 }
+
 
 
 function validateAndLogin($user)
