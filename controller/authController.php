@@ -62,21 +62,39 @@
        else{
         echo "insertion failed";
        }
+       exit();
     }
 
-    if (isset($_POST["action"]) && $_POST["action"] === "delete") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
         $userId = $_POST["userId"];
-        deleteUser($userId);
+        $result = delUser($userId);
+        if($result)
+        {
+
+        }
+        else
+        {
+            echo "Delete failed";
+        }
     }
 
-    if (isset($_POST["action"]) && $_POST["action"] === "update") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
         $user = [
             "user_id" => $_POST["userId"],
             "name"    => $_POST["username"],
             "role"    => $_POST["role"],
-            "email"   => $_POST["email"]
+            "email"   => $_POST["email"],
+            "status"  => "active"  
         ];
-        updateUser($user);
+        
+        $result = upUser($user);
+        
+        if($result) {
+           
+        } else {
+            echo "Update failed";
+        }
+        exit();
     }
 
    

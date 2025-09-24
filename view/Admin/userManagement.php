@@ -50,15 +50,15 @@ $result = mysqli_query($conn, $sql);
             <td><?= $row['email'] ?></td>
             <td>
              
-                <form action="../../controller/userController.php" method="POST" style="display:inline;">
+                <form action="../../controller/authController.php" method="POST" style="display:inline;">
                     <input type="hidden" name="userId" value="<?= $row['user_id'] ?>">
-                    <button type="submit" name="edit">Edit</button>
+                    <button type="submit" name="edit" value="edit">Edit</button>
                 </form>
 
                 
-                <form action="../../controller/userController.php" method="POST" style="display:inline;">
+                <form action="../../controller/authController.php" method="POST" style="display:inline;">
                     <input type="hidden" name="userId" value="<?= $row['user_id'] ?>">
-                    <button type="submit" name="delete">Delete</button>
+                    <button type="submit" name="delete" value="delete">Delete</button>
                 </form>
             </td>
         </tr>
