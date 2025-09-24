@@ -10,4 +10,12 @@
     {
         return validateAndLogin($user);
     }
+    function upUser($user)
+    {
+        return updateUser($user);
+    }
+    function delUser($userId)
+    {
+        return deleteUser($userId);
+    }
 ?>

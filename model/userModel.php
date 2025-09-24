@@ -12,12 +12,21 @@ function validateUser()
 function registerUser($user)
 {
     $conn = getConnection();
-    $sql = "INSERT INTO user (user_id, name, role, email, pass) 
-            VALUES ('{$user["user_id"]}','{$user["name"]}','{$user["role"]}','{$user["email"]}','{$user["pass"]}')";
+    $sql = "INSERT INTO `user` (user_id, name, role, email, pass, status) 
+            VALUES ('{$user["user_id"]}',
+                    '{$user["name"]}',
+                    '{$user["role"]}',
+                    '{$user["email"]}',
+                    '{$user["pass"]}',
+                    'active')";   // 👈 add default value for status
     
     $result = mysqli_query($conn, $sql);
+    if (!$result) {
+        die("Insert failed: " . mysqli_error($conn));
+    }
     return $result;
 }
+
 
 function validateAndLogin($user)
 {
@@ -64,4 +73,38 @@ function validateAndLogin($user)
         return false; 
     }
 }
+function deleteUser($userId)
+{
+    $conn = getConnection();
+    $sql = "DELETE FROM user WHERE user_id = '$userId'";
+    $result= mysqli_query($conn, $sql);
+    return $result;
+}
+
+function updateUser($user)
+{
+    $conn = getConnection();
+
+    $sql = "UPDATE `user` 
+            SET name='{$user["name"]}', 
+                role='{$user["role"]}', 
+                email='{$user["email"]}',
+                status='{$user["status"]}'
+            WHERE user_id='{$user["user_id"]}'";
+
+    $result = mysqli_query($conn, $sql);
+    if (!$result) {
+        die("Update failed: " . mysqli_error($conn));
+    }
+    return $result;
+}
+
+
+function getAllUsers()
+{
+    $conn = getConnection();
+    $sql = "SELECT * FROM user";
+    return mysqli_query($conn, $sql);
+}
+
 ?>
