@@ -5,7 +5,7 @@
 <html>
 <head>
   <title>Teacher Dashboard</title>
-  <link rel="stylesheet" href="Teacherstyle.css">
+  <link rel="stylesheet" href="../../assets/css/teacher/Teacherstyle.css">
 </head>
 <body>
   <div class="sidebar">

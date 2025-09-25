@@ -4,7 +4,7 @@
 <html>
 <head>
   <title>Student Dashboard</title>
-  <link rel="stylesheet" href="Studentstyle.css">
+  <link rel="stylesheet" href="../../assets/css/student/Studentstyle.css">
 </head>
 <body>
   <div class="sidebar">
