@@ -1,5 +1,5 @@
 <?php
-    require_once("../model/userModel.php");
+     require_once(__DIR__ . "/../model/userModel.php");
 
     function registeringUser($user)
     {

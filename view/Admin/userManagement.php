@@ -1,5 +1,5 @@
 <?php
-require_once("../../model/userModel.php");
+require_once("../../controller/userController.php");
 
 session_start();
 
@@ -7,8 +7,8 @@ $conn = getConnection();
 $sql = "SELECT * FROM user";
 $result = mysqli_query($conn, $sql);
 
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +16,7 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <title>User Management</title>
     <link rel="stylesheet" href="../../assets/css/admin/user.css">
+    <script src="../../assets/js/admin/update.js" defer></script>
 </head>
 <body>
    
@@ -50,8 +51,11 @@ $result = mysqli_query($conn, $sql);
             <td><?= $row['email'] ?></td>
             <td>
              
-                <form action="../../controller/authController.php" method="POST" style="display:inline;">
-                    <input type="hidden" name="userId" value="<?= $row['user_id'] ?>">
+                <form id="updateForm" action="../../controller/authController.php" method="POST" style="display:inline;">
+                   <input type="hidden" name="userId" id="updateUserId">
+                    <input type="hidden" name="username" id="updateUsername">
+                    <input type="hidden" name="role" id="updateRole">
+                    <input type="hidden" name="email" id="updateEmail">
                     <button type="submit" name="edit" value="edit">Edit</button>
                 </form>
 
@@ -64,5 +68,6 @@ $result = mysqli_query($conn, $sql);
         </tr>
         <?php } ?>
     </table>
+    
 </body>
 </html>

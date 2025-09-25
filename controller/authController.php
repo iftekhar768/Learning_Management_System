@@ -54,7 +54,7 @@
             "email"   => $_POST["email"],
             "pass"    => $_POST["pass"]
         ];
-       $result= registeringUser($user);
+       $result = registeringUser($user);
        if($result)
        {
 
