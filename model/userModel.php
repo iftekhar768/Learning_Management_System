@@ -84,12 +84,10 @@ function deleteUser($userId)
 function updateUser($user)
 {
     $conn = getConnection();
-
     $sql = "UPDATE `user` 
             SET name='{$user["name"]}', 
                 role='{$user["role"]}', 
-                email='{$user["email"]}',
-                status='{$user["status"]}'
+                email='{$user["email"]}'
             WHERE user_id='{$user["user_id"]}'";
 
     $result = mysqli_query($conn, $sql);

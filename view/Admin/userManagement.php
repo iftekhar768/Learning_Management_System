@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $sql);
         <button type="submit" name="insert" value="insert">Insert</button>
     </form>
 
-  >
+  
     <h2>All Users</h2>
     <table border="1" cellpadding="10">
         <tr>
@@ -52,10 +52,10 @@ $result = mysqli_query($conn, $sql);
             <td>
              
                 <form id="updateForm" action="../../controller/authController.php" method="POST" style="display:inline;">
-                   <input type="hidden" name="userId" id="updateUserId">
-                    <input type="hidden" name="username" id="updateUsername">
-                    <input type="hidden" name="role" id="updateRole">
-                    <input type="hidden" name="email" id="updateEmail">
+                   <input type="hidden" name="userId" value="<?= $row['user_id'] ?>">
+                    <input type="hidden" name="username" value="<?= $row['name'] ?>">
+                    <input type="hidden" name="role" value="<?= $row['role'] ?>">
+                    <input type="hidden" name="email" value="<?= $row['email'] ?>">
                     <button type="submit" name="edit" value="edit">Edit</button>
                 </form>
 

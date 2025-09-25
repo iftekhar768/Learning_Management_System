@@ -79,22 +79,23 @@
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
-        $user = [
-            "user_id" => $_POST["userId"],
-            "name"    => $_POST["username"],
-            "role"    => $_POST["role"],
-            "email"   => $_POST["email"],
-            "status"  => "active"  
-        ];
+         $user = [
+        "user_id" => $_POST["userId"],
+        "name"    => $_POST["username"],
+        "role"    => $_POST["role"],
+        "email"   => $_POST["email"]
+    ];
+    
+    $result = upUser($user);
+    
+    if($result) {
         
-        $result = upUser($user);
-        
-        if($result) {
-           
-        } else {
-            echo "Update failed";
-        }
+        header("Location: ../view/Admin/userManagement.php");
         exit();
+    } else {
+        echo "Update failed";
+    }
+    exit();
     }
 
    
