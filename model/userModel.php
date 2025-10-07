@@ -98,11 +98,47 @@ function updateUser($user)
 }
 
 
-function getAllUsers()
-{
-    $conn = getConnection();
-    $sql = "SELECT * FROM user";
-    return mysqli_query($conn, $sql);
-}
+function getTotalUsers()
+    {
+        $conn = getConnection();
+        $sql = "SELECT COUNT(*) as total FROM user";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        return $row['total'];
+    }
+
+    function getTotalUsersByRole($role)
+    {
+        $conn = getConnection();
+        $sql = "SELECT COUNT(*) as total FROM user WHERE role = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $role);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $row = mysqli_fetch_assoc($result);
+        mysqli_stmt_close($stmt);
+        return $row['total'];
+    }
+
+    function getRecentUsers($limit = 5)
+    {
+        $conn = getConnection();
+        $sql = "SELECT user_id, name, email, role, created_at 
+                FROM user
+                ORDER BY created_at DESC 
+                LIMIT ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $limit);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        
+        $users = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $users[] = $row;
+        }
+        
+        mysqli_stmt_close($stmt);
+        return $users;
+    }
 
 ?>
