@@ -227,9 +227,8 @@
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+   
+    
     overflow: hidden;
 }
 
