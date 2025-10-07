@@ -95,4 +95,94 @@
     
     return $row['teacher_id'] ?? null;
 }
+
+function addLesson($lessonData)
+    {
+        $conn = getConnection();
+        
+        $sql = "INSERT INTO lessons (course_id, lesson_title, lesson_content, lesson_order) 
+                VALUES (?, ?, ?, ?)";
+        
+        $stmt = mysqli_prepare($conn, $sql);
+        
+        if (!$stmt) {
+            return false;
+        }
+        
+        mysqli_stmt_bind_param($stmt, "issi", 
+            $lessonData["course_id"],
+            $lessonData["lesson_title"],
+            $lessonData["lesson_content"],
+            $lessonData["lesson_order"]
+        );
+        
+        $result = mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        
+        return $result;
+    }
+
+    function addCourseMaterial($materialData)
+    {
+        $conn = getConnection();
+        
+        $sql = "INSERT INTO course_materials (course_id, material_title, file_path, file_type) 
+                VALUES (?, ?, ?, ?)";
+        
+        $stmt = mysqli_prepare($conn, $sql);
+        
+        if (!$stmt) {
+            return false;
+        }
+        
+        mysqli_stmt_bind_param($stmt, "isss", 
+            $materialData["course_id"],
+            $materialData["material_title"],
+            $materialData["file_path"],
+            $materialData["file_type"]
+        );
+        
+        $result = mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        
+        return $result;
+    }
+
+    function getCourseLessons($courseId)
+    {
+        $conn = getConnection();
+        
+        $sql = "SELECT * FROM lessons WHERE course_id = ? ORDER BY lesson_order ASC";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $courseId);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        
+        $lessons = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $lessons[] = $row;
+        }
+        
+        mysqli_stmt_close($stmt);
+        return $lessons;
+    }
+
+    function getCourseMaterials($courseId)
+    {
+        $conn = getConnection();
+        
+        $sql = "SELECT * FROM course_materials WHERE course_id = ? ORDER BY created_at DESC";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $courseId);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        
+        $materials = [];
+        while ($row = mysqli_fetch_assoc($result)) {
+            $materials[] = $row;
+        }
+        
+        mysqli_stmt_close($stmt);
+        return $materials;
+    }
 ?>
