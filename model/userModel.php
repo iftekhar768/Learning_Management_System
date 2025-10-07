@@ -58,12 +58,12 @@ function validateAndLogin($user)
       
         if($role === "teacher")
         {
-            header("Location: ../view/Teacher/home.php");
+            header("Location: ../view/Teacher/teacher_dashboard.php");
             exit();
         }
         elseif($role === "student")
         {
-            header("Location: ../view/Student/home.php");
+            header("Location: ../view/Student/student_dashboard.php");
             exit();
         }
         return true;
