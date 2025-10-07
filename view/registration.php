@@ -28,6 +28,9 @@
             <label for="pass">Password: </label>
             <input type="text" name="pass" id="pass"><br><br>
             <input type="submit" name="submit" value="register" id="submitBtn"><br>
+            <div class="login-link">
+                Already have an account? <a href="login.php">Login</a>
+            </div>
         </div>     
     </form>
     </div>
