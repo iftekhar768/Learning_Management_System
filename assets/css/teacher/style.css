@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background: #004aad;
+  background: blueviolet;
   color: #fff;
   padding: 15px 30px;
   display: flex;
@@ -36,6 +36,9 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+}
+nav ul li a:hover{
+  color: yellow;
 }
 
 .dashboard {
@@ -64,7 +67,7 @@ nav ul li a {
 
 .btn {
   display: inline-block;
-  background: #004aad;
+  background: blueviolet;
   color: #fff;
   padding: 8px 15px;
   border-radius: 6px;
@@ -73,7 +76,7 @@ nav ul li a {
 }
 
 .btn:hover {
-  background: #00367d;
+  color: yellow;
 }
 
 footer {
