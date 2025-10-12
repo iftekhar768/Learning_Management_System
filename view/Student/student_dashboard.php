@@ -1,39 +1,46 @@
-<?php
-?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Student Dashboard</title>
-  <link rel="stylesheet" href="../../assets/css/student/Studentstyle.css">
+  <meta charset="UTF-8">
+  <title>Student Dashboard - LMS</title>
+  <link rel="stylesheet" href="student.css">
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Student</h2>
-    <ul>
-      <li><a href="student_dashboard.php">Dashboard</a></li>
-      <li><a href="student_courses.php">Courses</a></li>
-      <li><a href="student_announcements.php">Announcements</a></li>
-    </ul>
-  </div>
-  <div class="main">
+  <header>
     <h1>Student Dashboard</h1>
-    <div class="cards">
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/50/000000/open-book.png"/>
-        <h3>Enroll in Course</h3>
-        <p>Enroll in available courses and track progress</p>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/50/000000/test.png"/>
-        <h3>View Quizzes</h3>
-        <p>Attempt quizzes and view scores instantly</p>
-      </div>
-      <div class="card">
-        <img src="https://img.icons8.com/ios-filled/50/000000/document.png"/>
-        <h3>Submit Assignments</h3>
-        <p>Submit/download course materials</p>
-      </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">My Courses</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Assignments</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="dashboard">
+    <div class="card">
+      <h2>📌 Enroll in Courses</h2>
+      <p>Browse available courses and enroll to start learning.</p>
+      <a href="#" class="btn">View Courses</a>
     </div>
-  </div>
+
+    <div class="card">
+      <h2>🧪 Quizzes</h2>
+      <p>Attempt quizzes and check your scores instantly.</p>
+      <a href="#" class="btn">Take Quiz</a>
+    </div>
+
+    <div class="card">
+      <h2>📂 Assignments & Materials</h2>
+      <p>Download materials and submit your assignments.</p>
+      <a href="#" class="btn">Open Section</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Learning Management System | Student Panel</p>
+  </footer>
 </body>
 </html>
