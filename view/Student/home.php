@@ -21,19 +21,19 @@
 
   <section class="dashboard">
     <div class="card">
-      <h2>📌 Enroll in Courses</h2>
+      <h2>Enroll in Courses</h2>
       <p>Browse available courses and enroll to start learning.</p>
       <a href="#" class="btn">View Courses</a>
     </div>
 
     <div class="card">
-      <h2>🧪 Quizzes</h2>
+      <h2> Quizzes</h2>
       <p>Attempt quizzes and check your scores instantly.</p>
       <a href="#" class="btn">Take Quiz</a>
     </div>
 
     <div class="card">
-      <h2>📂 Assignments & Materials</h2>
+      <h2> Assignments & Materials</h2>
       <p>Download materials and submit your assignments.</p>
       <a href="#" class="btn">Open Section</a>
     </div>

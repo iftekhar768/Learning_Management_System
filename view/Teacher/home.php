@@ -21,19 +21,19 @@
 
   <section class="dashboard">
     <div class="card">
-      <h2>📚 Manage Courses</h2>
+      <h2>Manage Courses</h2>
       <p>Create and update course modules, lessons & materials.</p>
       <a href="#" class="btn">Go to Courses</a>
     </div>
 
     <div class="card">
-      <h2>📝 Quizzes</h2>
+      <h2> Quizzes</h2>
       <p>Add questions, set answers, and review student scores.</p>
       <a href="#" class="btn">Manage Quizzes</a>
     </div>
 
     <div class="card">
-      <h2>📢 Announcements</h2>
+      <h2> Announcements</h2>
       <p>Post assignments and announcements for your students.</p>
       <a href="#" class="btn">Create Announcement</a>
     </div>
