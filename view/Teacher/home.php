@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Teacher Dashboard - LMS</title>
-  <link rel="stylesheet" href="teacher.css">
+  <link rel="stylesheet" href="../../assets/css/teacher/style.css">
 </head>
 <body>
   <header>
