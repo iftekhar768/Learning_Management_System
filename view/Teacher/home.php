@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/teacher/style.css">
-    <title>Teacher Dashboard</title>
-    <script src="../../assets/js/teacher/script.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Teacher Dashboard - LMS</title>
+  <link rel="stylesheet" href="teacher.css">
 </head>
 <body>
-    <nav class="navbar">
-        <h1><a href="home.php" class="main_head">Teacher Panel</a></h1>
-        <header>
-            <ul class="list_management">
-                <li><a href="#" class="nav-link" data-page="teacher_dashboard.php">Dashboard</a></li>
-                <li><a href="#" class="nav-link" data-page="my_courses.php">My Courses</a></li>
-                <li><a href="#" class="nav-link" data-page="create_course.php">Create Course</a></li>
-                <li><a href="#" class="nav-link" data-page="quizzes.php">Quizzes</a></li>
-                <li><a href="#" class="nav-link" data-page="announcements.php">Announcements</a></li>
-                <li><a href="#" class="nav-link" data-page="assignments.php">Assignments</a></li>
-            </ul>
-        </header>
+  <header>
+    <h1>Teacher Dashboard</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Announcements</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <div id="content"></div>
+  <section class="dashboard">
+    <div class="card">
+      <h2>📚 Manage Courses</h2>
+      <p>Create and update course modules, lessons & materials.</p>
+      <a href="#" class="btn">Go to Courses</a>
+    </div>
 
-    <script src="../../assets/js/teacher/script.js" defer></script>
+    <div class="card">
+      <h2>📝 Quizzes</h2>
+      <p>Add questions, set answers, and review student scores.</p>
+      <a href="#" class="btn">Manage Quizzes</a>
+    </div>
+
+    <div class="card">
+      <h2>📢 Announcements</h2>
+      <p>Post assignments and announcements for your students.</p>
+      <a href="#" class="btn">Create Announcement</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Learning Management System | Teacher Panel</p>
+  </footer>
 </body>
 </html>
