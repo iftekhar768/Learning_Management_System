@@ -65,14 +65,16 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete"])) {
         $userId = $_POST["userId"];
         $result = delUser($userId);
-        if($result)
+       if($result) 
         {
+        header("Location: ../view/Admin/userManagement.php");
+        exit();
+        } 
+        else 
+        {
+        echo "Delete failed: " . mysqli_error($conn);
+        }
 
-        }
-        else
-        {
-            echo "Delete failed";
-        }
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["edit"])) {
