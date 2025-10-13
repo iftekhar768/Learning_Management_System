@@ -10,13 +10,13 @@
             exit();
         }
 
-        $user = [
+        $course = [
             "course_name"        => trim($_POST["course_name"]),
             "course_description" => trim($_POST["course_description"]),
             "teacher_id"         => intval($_POST["teacher_id"])
         ];
 
-        $result = addingCourse($user);
+        $result = addingCourse($course);
         
         if ($result) {
             header("Location: ../view/Admin/courses.php?success=1");

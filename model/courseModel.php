@@ -1,7 +1,7 @@
 <?php
     require_once("database.php");
     
-    function addCourse($user)
+    function addCourse($course)
     {
         $conn = getConnection();
         

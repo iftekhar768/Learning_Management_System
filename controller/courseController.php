@@ -1,9 +1,9 @@
 <?php
     require_once(__DIR__ . "/../model/courseModel.php");
 
-    function addingCourse($user)
+    function addingCourse($course)
     {
-        return addCourse($user);
+        return addCourse($course);
     }
 
     function getTeachers($searchTerm)
