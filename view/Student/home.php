@@ -14,7 +14,7 @@
         <li><a href="#">My Courses</a></li>
         <li><a href="#">Quizzes</a></li>
         <li><a href="#">Assignments</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="../login.php">Logout</a></li>
       </ul>
     </nav>
   </header>
